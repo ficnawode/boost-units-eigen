@@ -13,9 +13,14 @@ endif()
 
 include(cmake/fetch_content.cmake)
 
+find_package(Boost REQUIRED)
+
 enable_testing()
 include(GoogleTest)
 
 add_subdirectory(exec)
 add_subdirectory(lib)
 add_subdirectory(test)
+
+# external dependencies
+add_subdirectory(eigen)

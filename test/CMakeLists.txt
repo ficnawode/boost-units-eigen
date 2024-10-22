@@ -6,18 +6,23 @@ target_link_libraries(${NAME}
 PUBLIC
     gtest 
     gtest_main
-    
+
     dummy
+    units
+    
+    Eigen3::Eigen
 )
 
 target_include_directories(${NAME}
 PRIVATE 
+    ${Boost_INCLUDE_DIRS}
     include/
 )
 
 target_sources(${NAME}
 PRIVATE
     src/dummy_test.cpp
+    src/eigen_boost_units_test.cpp
 )
 
 add_custom_target(${NAME}.run
